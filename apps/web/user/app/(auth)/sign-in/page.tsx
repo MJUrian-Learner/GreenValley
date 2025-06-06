@@ -3,15 +3,12 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
-  CardTitle,
+  CardTitle
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
-import Link from "next/link";
+import SignInForm from "./signin-form";
 
 export default function SignIn() {
   return (
@@ -44,43 +41,8 @@ export default function SignIn() {
           </span>
           <Separator className="flex-1 border-1" />
         </div>
-        <form>
-          <div className="flex flex-col gap-6">
-            <div className="grid gap-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="m@example.com"
-                required
-              />
-            </div>
-            <div className="grid gap-2">
-              <div className="flex items-center">
-                <Label htmlFor="password">Password</Label>
-                <a
-                  href="#"
-                  className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-                >
-                  Forgot your password?
-                </a>
-              </div>
-              <Input id="password" type="password" required />
-            </div>
-          </div>
-        </form>
+        <SignInForm />
       </CardContent>
-      <CardFooter className="flex-col gap-2">
-        <Button type="submit" className="w-full">
-          Sign In
-        </Button>
-        <p className="text-sm text-muted-foreground">
-          Don&apos;t have an account?{" "}
-          <Link href="/sign-up" className="text-primary">
-            Create one here
-          </Link>
-        </p>
-      </CardFooter>
     </Card>
   );
 }
