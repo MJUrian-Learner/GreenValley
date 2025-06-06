@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
+import { PasswordInput } from "@/components/ui/passsword-input";
 
 function SignInForm() {
   const form = useForm<z.infer<typeof signInSchema>>({
@@ -54,7 +55,7 @@ function SignInForm() {
               <FormItem>
                 <FormLabel>Password</FormLabel>
                 <FormControl>
-                  <Input placeholder="********" {...field} />
+                  <PasswordInput id="password" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
