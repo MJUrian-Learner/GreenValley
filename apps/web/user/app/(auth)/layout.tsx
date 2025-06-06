@@ -7,7 +7,6 @@ export default function AuthLayout({
 }>) {
   return (
     <div
-      suppressHydrationWarning
       className="flex h-screen w-screen items-center justify-center"
     >
       {children}
