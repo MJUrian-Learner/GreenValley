@@ -1,3 +1,4 @@
+import SignInForm from "@/components/auth/sign-in/form";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -8,7 +9,7 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
-import SignInForm from "./signin-form";
+
 
 export default function SignIn() {
   return (
