@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { MENU_ITEMS } from "@/constants";
 
 function Footer() {
   return (
@@ -25,15 +26,11 @@ function Footer() {
           <div className="flex flex-col gap-4">
             <h1 className="text-lg font-medium tracking-wide">Quick Links</h1>
             <ul className="flex flex-col gap-2 text-muted/80 text-sm">
-              <li>
-                <Link href="/">Facilities</Link>
-              </li>
-              <li>
-                <Link href="/">How it works</Link>
-              </li>
-              <li>
-                <Link href="/">FAQ</Link>
-              </li>
+              {MENU_ITEMS.map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href}>{item.label}</Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div className="flex flex-col gap-4">
