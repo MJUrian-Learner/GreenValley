@@ -6,16 +6,22 @@ import { cn } from "@/lib/utils";
 import { MapPin } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useMemo } from "react";
 
 function Header() {
   const currentPath = usePathname();
 
-  const isActive = (href: string) => currentPath === href;
+  const isActive = useMemo(() => {
+    return (href: string) => currentPath === href;
+  }, [currentPath]);
 
   return (
-    <header className="bg-background border-b-2 border-b-muted py-4">
-      <div className="container flex items-center justify-between">
+    <header id="header" className="bg-background border-b-2 border-b-muted ">
+      <div className="bg-accent text-neutral py-2 px-4 text-center text-sm font-medium">
+        📢 Notice: Community Hall will be closed for maintenance June 20-22,
+        2025
+      </div>
+      <nav className="container flex items-center justify-between py-4">
         <div>
           <Link href="/" className="flex items-center gap-2">
             <MapPin className="size-8 text-background bg-primary rounded-lg p-1" />
@@ -44,7 +50,7 @@ function Header() {
           <Button variant="outline">Login</Button>
           <Button>Register</Button>
         </div>
-      </div>
+      </nav>
     </header>
   );
 }
