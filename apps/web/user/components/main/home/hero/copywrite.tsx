@@ -28,11 +28,12 @@ function Copywrite() {
         </p>
       </div>
       <div className="flex items-center gap-2">
-        <Button className="px-6!">
+        <Button size="lg" className="px-6!">
           <Calendar className="size-4" />
           Book Now
         </Button>
         <Button
+          size="lg"
           variant="outline"
           className="border border-primary! text-primary px-6 hover:bg-primary! hover:text-background!"
         >
