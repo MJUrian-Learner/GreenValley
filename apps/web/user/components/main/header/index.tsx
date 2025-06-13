@@ -14,7 +14,7 @@ function Header() {
   const isActive = (href: string) => currentPath === href;
 
   return (
-    <header className="bg-background border border-b-muted py-4">
+    <header className="bg-background border-b-2 border-b-muted py-4">
       <div className="container flex items-center justify-between">
         <div>
           <Link href="/" className="flex items-center gap-2">
