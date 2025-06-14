@@ -22,7 +22,7 @@ function Header() {
         <div>
           <Link href="/" className="flex items-center gap-2">
             <MapPin className="size-8 text-background bg-primary rounded-lg p-1" />
-            <h1 className="text-lg font-bold tracking-wider text-primary/90 text-shadow-sm">
+            <h1 className="text-lg font-semibold tracking-wider text-primary/90 text-shadow-sm">
               Green Valley
             </h1>
           </Link>
