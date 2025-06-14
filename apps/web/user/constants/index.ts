@@ -116,3 +116,30 @@ export const FEATURES = [
       "Our properties prioritize safety with 24/7 security measures to ensure peace of mind for all renters.",
   },
 ];
+
+export const TESTIMONIALS = [
+  {
+    name: "Maria Santos",
+    image: "/placeholder.svg",
+    description: "Resident since 2019",
+    rating: 5,
+    comment:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+  },
+  {
+    name: "Juan Dela Cruz",
+    image: "/placeholder.svg",
+    description: "Basketball team captain",
+    rating: 4,
+    comment:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+  },
+  {
+    name: "Ana Rodriguez",
+    image: "/placeholder.svg",
+    description: "Community Organizer",
+    rating: 4.5,
+    comment:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+  },
+];
