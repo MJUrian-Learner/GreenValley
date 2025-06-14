@@ -1,26 +1,22 @@
 "use client";
 
-import React from "react";
-import Copywrite from "./copywrite";
-import { useHeaderHeight } from "@/providers/header-height";
-import HeroImage from "./hero-image";
 import { useElementHeight } from "@/hooks/useElementHeight";
+import Copywrite from "./copywrite";
+import HeroImage from "./hero-image";
 
 function Hero() {
-  const { headerHeight } = useHeaderHeight();
-  const { ref, height } = useElementHeight();
+  const headerHeight = useElementHeight("header");
 
   return (
-    <section className="bg-primary/15">
+    <section id="hero-section" className="bg-primary/15">
       <div
-        ref={ref}
-        className="container grid grid-cols-2 gap-12 items-center"
+        className="container grid grid-cols-2 gap-12 items-center transition-all duration-700 ease-in-out"
         style={{
           minHeight: `calc(100dvh - ${headerHeight}px)`,
         }}
       >
         <Copywrite />
-        <HeroImage height={height} />
+        <HeroImage />
       </div>
     </section>
   );
