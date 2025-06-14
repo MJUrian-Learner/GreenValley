@@ -1,15 +1,15 @@
 "use client";
 import { HERO_IMAGES } from "@/constants";
 
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+  HERO_IMAGES_DRAGGING_THRESHOLD,
+  HERO_IMAGES_GALLERY_HEIGHT_RATIO,
+  HERO_IMAGES_IMAGE_CONTENT_HEIGHT_RATIO,
+} from "@/constants";
 import { useElementHeight } from "@/hooks/useElementHeight";
 import {
   AnimatePresence,
@@ -17,17 +17,9 @@ import {
   PanInfo,
   useDragControls,
 } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Skeleton } from "@/components/ui/skeleton";
-import {
-  HERO_IMAGES_DRAGGING_THRESHOLD,
-  HERO_IMAGES_GALLERY_HEIGHT_RATIO,
-  HERO_IMAGES_IMAGE_CONTENT_HEIGHT_RATIO,
-} from "@/constants";
 
 // Generate random rotation number in range of -10 to 10
 const generateRandomRotation = () => Math.floor(Math.random() * 21) - 10;
@@ -119,15 +111,6 @@ function HeroImage() {
                 className="absolute inset-0 origin-bottom cursor-grab active:cursor-grabbing"
               >
                 <Card className="p-6 shadow-2xl">
-                  <CardHeader hidden>
-                    <CardTitle>Gallery Image {index + 1}</CardTitle>
-                    <CardDescription>
-                      Interactive image card that can be swiped left or right
-                    </CardDescription>
-                    <CardAction>
-                      Use drag gestures to navigate between images
-                    </CardAction>
-                  </CardHeader>
                   <CardContent
                     className="relative h-64 w-full rounded-2xl overflow-hidden"
                     style={{
