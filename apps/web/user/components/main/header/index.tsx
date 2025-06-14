@@ -6,14 +6,11 @@ import { cn } from "@/lib/utils";
 import { MapPin } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useMemo } from "react";
 
 function Header() {
   const currentPath = usePathname();
 
-  const isActive = useMemo(() => {
-    return (href: string) => currentPath === href;
-  }, [currentPath]);
+  const isActive = (href: string) => currentPath === href;
 
   return (
     <header id="header" className="bg-background border-b-2 border-b-muted ">
