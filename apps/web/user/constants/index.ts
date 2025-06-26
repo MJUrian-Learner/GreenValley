@@ -101,7 +101,7 @@ export const FEATURES = [
     logo: Layout as LucideIcon,
     title: "Multi Functional Spaces",
     description:
-      "Our facilities are perfect for business meetings, parties, and sports events. Adaptable layouts to suit any occasion.",
+      "Our facilities are perfect for business meetings, parties, and sports events.",
   },
   {
     logo: CalendarCheck as LucideIcon,
