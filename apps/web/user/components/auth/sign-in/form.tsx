@@ -1,6 +1,6 @@
 "use client";
 
-import { signInSchema } from "@/app/schemas/auth/sign-in.schema";
+import { signInSchema } from "@/app/validation/auth/sign-in.schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";

@@ -1,6 +1,6 @@
 "use client";
 
-import { signUpSchema } from "@/app/schemas/auth/sign-in.schema";
+import { signUpSchema } from "@/app/validation/auth/sign-in.schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -93,7 +93,6 @@ function SignUpForm() {
               <div className="flex space-x-1 items-start">
                 <FormControl>
                   <Checkbox
-                    
                     checked={field.value}
                     onCheckedChange={field.onChange}
                   />
