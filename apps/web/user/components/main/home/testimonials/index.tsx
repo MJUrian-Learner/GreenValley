@@ -12,7 +12,7 @@ function Features() {
     <section className="min-h-fit bg-muted ">
       <div className="container py-20 flex flex-col gap-12">
         <div className="text-center w-6/12 mx-auto space-y-4">
-          <h2 className="text-3xl font-bold text-primary tracking-wide">
+          <h2 className="text-3xl font-bold text-primary tracking-wide font-serif">
             What Residents Are Saying
           </h2>
           <div className="flex gap-6 items-center justify-center">
