@@ -20,7 +20,7 @@ import "swiper/css/scrollbar";
 function Promos() {
   return (
     <section className="min-h-fit bg-gradient-to-r from-accent/10 via-primary/10 to-primary/12">
-      <div className="container pt-20 pb-10 flex flex-col gap-12">
+      <div className="container py-20 flex flex-col gap-12">
         {/* Section Title */}
         <div className="text-center w-4/12 mx-auto space-y-4">
           <h2 className="text-3xl font-bold text-primary tracking-wide font-serif">
