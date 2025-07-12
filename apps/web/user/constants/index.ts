@@ -6,6 +6,9 @@ import {
   Layout,
   CalendarCheck,
   ShieldCheck,
+  LandPlot,
+  BadgePercent,
+  Projector,
 } from "lucide-react";
 
 export const MENU_ITEMS = [
@@ -169,5 +172,71 @@ export const FAQS_ITEMS = [
     question: "What if I need help during my reservation?",
     answer:
       "If you need assistance at any point, you can reach our 24/7 support team via the in-dashboard chat or by calling our helpline.",
+  },
+];
+
+export const PROMOS = [
+  {
+    id: 1,
+    type: "Event",
+    date: "July 12-15, 2024",
+    title: "Summer Basketball",
+    description:
+      "Join our annual basketball tournament. Court reservations available for practice sessions.",
+    icon: LandPlot as LucideIcon,
+  },
+  {
+    id: 2,
+    type: "Promo",
+    date: "Valid until June 30",
+    title: "Community Hall 20% Off",
+    description:
+      "Special discount for weekend bookings. Perfect for family celebrations and gatherings.",
+    icon: BadgePercent as LucideIcon,
+  },
+  {
+    id: 3,
+    type: "Workshop",
+    date: "Aug 5, 2024",
+    title: "Gardening Basics",
+    description:
+      "Learn the essentials of home gardening from local experts. Free starter kits for attendees!",
+    icon: Projector as LucideIcon,
+  },
+  {
+    id: 4,
+    type: "Meetup",
+    date: "Sept 10, 2024",
+    title: "Moms & Tots Playdate",
+    description:
+      "A fun morning for moms and their little ones. Snacks and games provided.",
+    icon: Users as LucideIcon,
+  },
+  {
+    id: 5,
+    type: "Class",
+    date: "Oct 2, 2024",
+    title: "Yoga for Beginners",
+    description:
+      "Start your wellness journey with our introductory yoga class. Mats provided.",
+    icon: Projector as LucideIcon,
+  },
+  {
+    id: 6,
+    type: "Festival",
+    date: "Nov 15, 2024",
+    title: "Harvest Festival",
+    description:
+      "Celebrate the season with food, music, and games for all ages. Free entry!",
+    icon: Users as LucideIcon,
+  },
+  {
+    id: 7,
+    type: "Charity",
+    date: "Dec 10, 2024",
+    title: "Holiday Food Drive",
+    description:
+      "Help us support local families in need. Donate non-perishable food items at the community center.",
+    icon: Users as LucideIcon,
   },
 ];
