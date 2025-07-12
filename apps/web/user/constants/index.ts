@@ -143,3 +143,31 @@ export const TESTIMONIALS = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
   },
 ];
+
+export const FAQS_ITEMS = [
+  {
+    question: "How do I cancel or modify my reservation?",
+    answer:
+      "You can cancel or modify your reservation up to 24 hours before your scheduled time through your account dashboard. Full refunds are available for cancellations made at least 48 hours in advance.",
+  },
+  {
+    question: "Can I reserve multiple facilities at once?",
+    answer:
+      "Yes—you can select and book multiple facilities in a single reservation session before checking out.",
+  },
+  {
+    question: "What payment methods do you accept?",
+    answer:
+      "We accept all major credit and debit cards, as well as popular e-wallets such as GCash and PayMaya.",
+  },
+  {
+    question: "Do I need to print my QR ticket?",
+    answer:
+      "No—simply display your QR ticket on your mobile device and present it at the facility entrance for scanning.",
+  },
+  {
+    question: "What if I need help during my reservation?",
+    answer:
+      "If you need assistance at any point, you can reach our 24/7 support team via the in-dashboard chat or by calling our helpline.",
+  },
+];
