@@ -90,6 +90,19 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+/* Swiper scrollbar branding styles */
+.swiper-scrollbar {
+  --swiper-scrollbar-border-radius: 8px;
+  --swiper-scrollbar-top: auto;
+  --swiper-scrollbar-bottom: 8px;
+  --swiper-scrollbar-left: auto;
+  --swiper-scrollbar-right: 8px;
+  --swiper-scrollbar-sides-offset: 2%;
+  --swiper-scrollbar-bg-color: oklch(0.6036 0.160019 151.6554 / 0.2);
+  --swiper-scrollbar-drag-bg-color: oklch(0.6036 0.160019 151.6554 / 0.5);
+  --swiper-scrollbar-size: 6px;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
