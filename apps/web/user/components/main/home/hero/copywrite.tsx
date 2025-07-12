@@ -16,7 +16,7 @@ function Copywrite() {
         </div>
       </div>
       <div className="flex flex-col gap-2">
-        <h1 className="text-6xl font-bold ">
+        <h1 className="text-6xl font-bold font-serif">
           Reserve Barangay
           <br />
           Facilities <span className="text-primary">Instantly</span>
