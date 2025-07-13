@@ -9,6 +9,10 @@ import {
   LandPlot,
   BadgePercent,
   Projector,
+  QrCode,
+  CreditCard,
+  CalendarDays,
+  MapPin,
 } from "lucide-react";
 
 export const MENU_ITEMS = [
@@ -238,5 +242,32 @@ export const PROMOS = [
     description:
       "Help us support local families in need. Donate non-perishable food items at the community center.",
     icon: Users as LucideIcon,
+  },
+];
+
+export const HOW_IT_WORKS = [
+  {
+    icon: MapPin as LucideIcon,
+    title: "Choose a Facility",
+    description:
+      "Browse available facilities and select your preferred option from our catalog.",
+  },
+  {
+    icon: CalendarDays as LucideIcon,
+    title: "Pick Your Date & Time",
+    description:
+      "Select your desired date and time slot from our real-time calendar.",
+  },
+  {
+    icon: CreditCard as LucideIcon,
+    title: "Pay Online",
+    description:
+      "Complete secure payment through GCash, PayMaya, or bank transfer.",
+  },
+  {
+    icon: QrCode as LucideIcon,
+    title: "Get QR Ticket",
+    description:
+      "Receive instant QR code ticket via email for facility access.",
   },
 ];
