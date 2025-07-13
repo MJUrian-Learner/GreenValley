@@ -13,7 +13,40 @@ import {
   CreditCard,
   CalendarDays,
   MapPin,
+  BadgeCheck,
+  Shield,
+  Heart,
 } from "lucide-react";
+
+export const SECTION_TITLES = {
+  features: {
+    title: "What Sets Us Apart",
+    description:
+      "Explore the unique features and exceptional services that make our rentals the best",
+  },
+  faqs: {
+    title: "Frequently Asked Questions",
+    description:
+      "Find answers to frequently asked questions about our services and facilities",
+  },
+  howItWorks: {
+    title: "How It Works",
+    description: "Simple steps to reserve your preferred facility",
+  },
+  testimonials: {
+    title: "What Residents Are Saying",
+  },
+  promos: {
+    title: "Upcoming Events & Promos",
+    description:
+      "Stay updated with our latest events and promotions to make the most of your rental experience",
+  },
+  cta: {
+    title: "Start Your Reservation Now",
+    description:
+      "Book your next stay with us and enjoy a comfortable and memorable experience.",
+  },
+};
 
 export const MENU_ITEMS = [
   {
@@ -269,5 +302,77 @@ export const HOW_IT_WORKS = [
     title: "Get QR Ticket",
     description:
       "Receive instant QR code ticket via email for facility access.",
+  },
+];
+
+export const CORE_VALUES = [
+  {
+    icon: BadgeCheck as LucideIcon,
+    title: "Trust & Transparency",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+  },
+  {
+    icon: Shield as LucideIcon,
+    title: "Transparency",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+  },
+  {
+    icon: Heart as LucideIcon,
+    title: "Community First",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+  },
+];
+
+export const TEAM_MEMBERS = [
+  {
+    name: "John Doe",
+    role: "Founder & CEO",
+    avatar: "/placeholder.svg",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      github: "https://github.com",
+    },
+    bio: "John is a visionary leader with a passion for creating innovative solutions that empower users and drive market growth.",
+    skills: ["Leadership", "Strategy", "Innovation"],
+  },
+  {
+    name: "Jane Smith",
+    role: "Operations Manager",
+    avatar: "/placeholder.svg",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      github: "https://github.com",
+    },
+    bio: "Jane is a technology expert with a talent for building scalable and robust systems that deliver exceptional user experiences.",
+    skills: ["React", "Node.js", "System Architecture"],
+  },
+  {
+    name: "Peter Jones",
+    role: "Product Manager",
+    avatar: "/placeholder.svg",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      github: "https://github.com",
+    },
+    bio: "Peter is a product strategist who excels at translating user needs into compelling features and a seamless product journey.",
+    skills: ["Product Management", "UX Research", "Agile"],
+  },
+  {
+    name: "Mary Williams",
+    role: "Creative Designer",
+    avatar: "/placeholder.svg",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      github: "https://github.com",
+    },
+    bio: "Mary is a creative designer with a keen eye for aesthetics and a commitment to crafting intuitive and beautiful interfaces.",
+    skills: ["UI/UX Design", "Figma", "Prototyping"],
   },
 ];
