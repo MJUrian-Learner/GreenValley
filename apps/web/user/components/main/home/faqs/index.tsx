@@ -5,19 +5,23 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { FAQS_ITEMS } from "@/constants";
+import { FAQS_ITEMS, SECTION_TITLES } from "@/constants";
+import {
+  SectionTitle,
+  SectionTitleDescription,
+  SectionTitleHeader,
+} from "@/components/common/section-title";
 
 function FAQs() {
   return (
     <section className="min-h-fit container py-20 flex flex-col gap-12">
-      <div className="text-center w-4/12 mx-auto space-y-4">
-        <h2 className="text-3xl font-bold text-primary tracking-wide font-serif">
-          Frequently Asked Questions
-        </h2>
-        <p className="text-muted-foreground">
-          Find answers to frequently asked questions about our services and
-          facilities
-        </p>
+      <div className="w-4/12 mx-auto">
+        <SectionTitle>
+          <SectionTitleHeader>{SECTION_TITLES.faqs.title}</SectionTitleHeader>
+          <SectionTitleDescription>
+            {SECTION_TITLES.faqs.description}
+          </SectionTitleDescription>
+        </SectionTitle>
       </div>
       <Accordion type="multiple" className="w-6/12 mx-auto space-y-3">
         {FAQS_ITEMS.map((faq, index) => (

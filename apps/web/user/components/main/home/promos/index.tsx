@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { PROMOS } from "@/constants";
+import { PROMOS, SECTION_TITLES } from "@/constants";
 import { ArrowRight } from "lucide-react";
 import { FreeMode, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -16,19 +16,25 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/scrollbar";
+import {
+  SectionTitle,
+  SectionTitleDescription,
+  SectionTitleHeader,
+} from "@/components/common/section-title";
 
 function Promos() {
   return (
     <section className="min-h-fit bg-gradient-to-r from-accent/10 via-primary/10 to-primary/12">
       <div className="container py-20 flex flex-col gap-12">
-        {/* Section Title */}
-        <div className="text-center w-4/12 mx-auto space-y-4">
-          <h2 className="text-3xl font-bold text-primary tracking-wide font-serif">
-            Upcoming Events &amp; Promos
-          </h2>
-          <p className="text-muted-foreground">
-            Discover what&apos;s happening in your community
-          </p>
+        <div className="w-4/12 mx-auto">
+          <SectionTitle>
+            <SectionTitleHeader>
+              {SECTION_TITLES.promos.title}
+            </SectionTitleHeader>
+            <SectionTitleDescription>
+              {SECTION_TITLES.promos.description}
+            </SectionTitleDescription>
+          </SectionTitle>
         </div>
 
         {/* Swiper Container */}

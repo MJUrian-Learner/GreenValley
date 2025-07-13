@@ -1,6 +1,6 @@
 "use client";
 
-import { HOW_IT_WORKS } from "@/constants";
+import { HOW_IT_WORKS, SECTION_TITLES } from "@/constants";
 import { Info } from "lucide-react";
 import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -10,6 +10,11 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import {
+  SectionTitle,
+  SectionTitleDescription,
+  SectionTitleHeader,
+} from "@/components/common/section-title";
 
 export function HowItWorks() {
   const [activeStep, setActiveStep] = useState(-1);
@@ -17,13 +22,15 @@ export function HowItWorks() {
   return (
     <section className="min-h-fit bg-gradient-to-r from-accent/3 to-accent/5">
       <div className="container py-20 flex flex-col gap-12">
-        <div className="text-center w-4/12 mx-auto space-y-4">
-          <h2 className="text-3xl font-bold text-primary tracking-wide font-serif">
-            How It Works
-          </h2>
-          <p className="text-muted-foreground">
-            Simple steps to reserve your preferred facility
-          </p>
+        <div className="w-4/12 mx-auto">
+          <SectionTitle>
+            <SectionTitleHeader>
+              {SECTION_TITLES.howItWorks.title}
+            </SectionTitleHeader>
+            <SectionTitleDescription>
+              {SECTION_TITLES.howItWorks.description}
+            </SectionTitleDescription>
+          </SectionTitle>
         </div>
 
         {/* Stepper */}

@@ -44,11 +44,7 @@ function AboutHero() {
           tailored for your community.
         </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-        >
+        <div>
           <Link href="#facilities">
             <Button
               size="lg"
@@ -76,7 +72,7 @@ function AboutHero() {
               )}
             </Button>
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

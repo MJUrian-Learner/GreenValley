@@ -1,9 +1,13 @@
 "use client";
 
+import {
+  SectionTitle,
+  SectionTitleHeader,
+} from "@/components/common/section-title";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 
-import { TESTIMONIALS } from "@/constants";
+import { SECTION_TITLES, TESTIMONIALS } from "@/constants";
 import { Star } from "lucide-react";
 import Image from "next/image";
 
@@ -12,26 +16,28 @@ function Features() {
     <section className="min-h-fit bg-muted ">
       <div className="container py-20 flex flex-col gap-12">
         <div className="text-center w-6/12 mx-auto space-y-4">
-          <h2 className="text-3xl font-bold text-primary tracking-wide font-serif">
-            What Residents Are Saying
-          </h2>
-          <div className="flex gap-6 items-center justify-center">
-            <div className="flex gap-2">
-              {/* stars */}
-              <div className="flex items-center gap-1 text-accent">
-                {/* 5 stars */}
-                {Array.from({ length: 5 }).map((_, index) => (
-                  <Star key={index} className="w-4 h-4" fill="currentColor" />
-                ))}
+          <SectionTitle>
+            <SectionTitleHeader>
+              {SECTION_TITLES.testimonials.title}
+            </SectionTitleHeader>
+            <div className="flex gap-6 items-center justify-center">
+              <div className="flex gap-2">
+                {/* stars */}
+                <div className="flex items-center gap-1 text-accent">
+                  {/* 5 stars */}
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <Star key={index} className="w-4 h-4" fill="currentColor" />
+                  ))}
+                </div>
+                <p className="font-medium text-muted-foreground">
+                  4.8/5 average rating
+                </p>
               </div>
               <p className="font-medium text-muted-foreground">
-                4.8/5 average rating
+                127 facilities reserved this month
               </p>
             </div>
-            <p className="font-medium text-muted-foreground">
-              127 facilities reserved this month
-            </p>
-          </div>
+          </SectionTitle>
         </div>
 
         <div className="grid grid-cols-3 gap-6">

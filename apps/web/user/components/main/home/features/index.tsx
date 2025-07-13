@@ -4,18 +4,25 @@ import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 
 import { FEATURES } from "@/constants";
+import {
+  SectionTitle,
+  SectionTitleDescription,
+  SectionTitleHeader,
+} from "@/components/common/section-title";
+import { SECTION_TITLES } from "@/constants";
 
 function Features() {
   return (
     <section className="min-h-fit container py-20 flex flex-col gap-12">
-      <div className="text-center w-4/12 mx-auto space-y-4">
-        <h2 className="text-3xl font-bold text-primary tracking-wide font-serif">
-          What Sets Us Apart
-        </h2>
-        <p className="text-muted-foreground">
-          Explore the unique features and exceptional services that make our
-          rentals the best
-        </p>
+      <div className="w-4/12 mx-auto">
+        <SectionTitle>
+          <SectionTitleHeader>
+            {SECTION_TITLES.features.title}
+          </SectionTitleHeader>
+          <SectionTitleDescription>
+            {SECTION_TITLES.features.description}
+          </SectionTitleDescription>
+        </SectionTitle>
       </div>
 
       <div className="grid grid-cols-3 gap-6">
