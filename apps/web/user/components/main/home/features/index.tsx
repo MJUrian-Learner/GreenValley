@@ -12,7 +12,7 @@ function Features() {
         <h2 className="text-3xl font-bold text-primary tracking-wide font-serif">
           What Sets Us Apart
         </h2>
-        <p>
+        <p className="text-muted-foreground">
           Explore the unique features and exceptional services that make our
           rentals the best
         </p>

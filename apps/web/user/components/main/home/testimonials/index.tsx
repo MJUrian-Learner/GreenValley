@@ -24,9 +24,13 @@ function Features() {
                   <Star key={index} className="w-4 h-4" fill="currentColor" />
                 ))}
               </div>
-              <p className="font-medium">4.8/5 average rating</p>
+              <p className="font-medium text-muted-foreground">
+                4.8/5 average rating
+              </p>
             </div>
-            <p className="font-medium">127 facilities reserved this month</p>
+            <p className="font-medium text-muted-foreground">
+              127 facilities reserved this month
+            </p>
           </div>
         </div>
 

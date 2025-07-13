@@ -14,7 +14,7 @@ function FAQs() {
         <h2 className="text-3xl font-bold text-primary tracking-wide font-serif">
           Frequently Asked Questions
         </h2>
-        <p>
+        <p className="text-muted-foreground">
           Find answers to frequently asked questions about our services and
           facilities
         </p>

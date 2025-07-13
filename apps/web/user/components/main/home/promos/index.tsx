@@ -26,7 +26,9 @@ function Promos() {
           <h2 className="text-3xl font-bold text-primary tracking-wide font-serif">
             Upcoming Events &amp; Promos
           </h2>
-          <p>Discover what&apos;s happening in your community</p>
+          <p className="text-muted-foreground">
+            Discover what&apos;s happening in your community
+          </p>
         </div>
 
         {/* Swiper Container */}
