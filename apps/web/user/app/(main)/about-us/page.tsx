@@ -3,7 +3,7 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import AboutHero from "@/components/main/about/hero";
+import AboutHero from "@/components/main/about-us/hero";
 
 export default function AboutUs() {
   return (
