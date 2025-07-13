@@ -30,7 +30,7 @@ function Footer() {
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-2">
                 <MapPin className="size-7 text-background bg-primary rounded-lg p-1" />
-                <h1 className="text-lg font-medium tracking-wide">
+                <h1 className="text-lg font-medium tracking-wide font-serif">
                   Green Valley
                 </h1>
               </div>

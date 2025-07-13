@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Poppins } from "next/font/google";
+import { Merriweather, Poppins } from "next/font/google";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -8,8 +8,8 @@ const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const merriweather = Merriweather({
+  variable: "--font-merriweather",
   subsets: ["latin"],
   weight: ["400", "700"],
 });
@@ -28,7 +28,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className={`${poppins.variable} ${playfair.variable} font-sans antialiased`}
+        className={`${poppins.variable} ${merriweather.variable} font-sans antialiased`}
       >
         {children}
       </body>
