@@ -44,8 +44,12 @@ function Header() {
           </ul>
         </div>
         <div className="flex items-center gap-2">
-          <Button variant="outline">Login</Button>
-          <Button>Register</Button>
+          <Link href="/sign-in">
+            <Button variant="outline">Sign In</Button>
+          </Link>
+          <Link href="/sign-up">
+            <Button>Sign Up</Button>
+          </Link>
         </div>
       </nav>
     </header>

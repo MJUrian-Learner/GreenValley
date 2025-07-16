@@ -5,11 +5,10 @@ import {
   CardContent,
   CardDescription,
   CardHeader,
-  CardTitle
+  CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
-
 
 export default function SignIn() {
   return (
@@ -29,8 +28,8 @@ export default function SignIn() {
             Continue with Google
           </Button>
           <Button variant="outline" className="w-full bg-primary">
-            <div className="relative h-4 w-4">
-              <Image src="/fb.svg" alt="Google Icon" fill />
+            <div className="relative h-5 w-5">
+              <Image src="/fb.svg" alt="Facebook Icon" fill />
             </div>
             Continue with Facebook
           </Button>
