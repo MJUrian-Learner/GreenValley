@@ -75,7 +75,7 @@ function SignInForm() {
           </Button>
           <p className="text-sm text-muted-foreground text-center">
             Don&apos;t have an account?{" "}
-            <Link href="/sign-up" className="text-primary">
+            <Link href="/auth/sign-up" className="text-primary">
               Create one here
             </Link>
           </p>

@@ -44,10 +44,10 @@ function Header() {
           </ul>
         </div>
         <div className="flex items-center gap-2">
-          <Link href="/sign-in">
+          <Link href="/auth/sign-in">
             <Button variant="outline">Sign In</Button>
           </Link>
-          <Link href="/sign-up">
+          <Link href="/auth/sign-up">
             <Button>Sign Up</Button>
           </Link>
         </div>
