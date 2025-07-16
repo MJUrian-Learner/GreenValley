@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useElementHeight } from "@/hooks/useElementHeight";
 import Copywrite from "./copywrite";
 import HeroImage from "./hero-image";
@@ -10,13 +10,23 @@ function Hero() {
   const headerHeight = useElementHeight("header");
 
   // Floating particles setup
-  const [particles] = useState(
-    Array.from({ length: 6 }).map(() => ({
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      delay: Math.random() * 2,
-    }))
-  );
+  const [particles, setParticles] = useState<
+    {
+      x: number;
+      y: number;
+      delay: number;
+    }[]
+  >([]);
+
+  useEffect(() => {
+    setParticles(
+      Array.from({ length: 6 }).map(() => ({
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        delay: Math.random() * 2,
+      }))
+    );
+  }, []);
 
   return (
     <section
