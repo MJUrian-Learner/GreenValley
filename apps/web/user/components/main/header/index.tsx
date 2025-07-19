@@ -19,11 +19,17 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useClerk } from "@clerk/nextjs";
 
 function Header({ authenticated }: { authenticated: boolean }) {
   const currentPath = usePathname();
+  const { signOut } = useClerk();
 
   const isActive = (href: string) => currentPath === href;
+
+  const handleLogout = () => {
+    signOut({ redirectUrl: "/" });
+  };
 
   return (
     <header id="header" className="bg-background border-b-2 border-b-muted ">
@@ -118,7 +124,9 @@ function Header({ authenticated }: { authenticated: boolean }) {
                   <DropdownMenuItem>Profile</DropdownMenuItem>
                   <DropdownMenuItem>Billing</DropdownMenuItem>
                   <DropdownMenuItem>Team</DropdownMenuItem>
-                  <DropdownMenuItem>Subscription</DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Button onClick={handleLogout}>Logout</Button>
+                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
