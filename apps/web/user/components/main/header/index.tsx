@@ -6,6 +6,19 @@ import { cn } from "@/lib/utils";
 import { MapPin, Calendar, User, Bell } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 function Header({ authenticated }: { authenticated: boolean }) {
   const currentPath = usePathname();
@@ -54,42 +67,60 @@ function Header({ authenticated }: { authenticated: boolean }) {
               </Link>
             </>
           ) : (
-            <div className="flex items-center gap-2">
-              {/* Notifications */}
-              <Link
-                href="/notifications"
-                className={cn(
-                  "p-0 h-8 w-8 flex items-center justify-center rounded-full",
-                  "text-gray-600 hover:text-primary transition-colors",
-                  "focus:outline-none focus:ring-2 focus:ring-primary/50"
-                )}
-              >
-                <Bell className="h-5 w-5" />
-              </Link>
+            <div className="flex items-center gap-4">
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    className="text-muted-foreground hover:text-primary hover:bg-transparent! p-0!"
+                  >
+                    <Bell className="size-5" />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent side="bottom" align="center">
+                  Notifications
+                </TooltipContent>
+              </Tooltip>
 
-              {/* Calendar overview */}
-              <Link
-                href="/my-calendar"
-                className={cn(
-                  "p-0 h-8 w-8 flex items-center justify-center rounded-full",
-                  "text-gray-600 hover:text-primary transition-colors",
-                  "focus:outline-none focus:ring-2 focus:ring-primary/50"
-                )}
-              >
-                <Calendar className="h-5 w-5" />
-              </Link>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    className="text-muted-foreground hover:text-primary hover:bg-transparent! p-0!"
+                  >
+                    <Calendar className="size-5" />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent side="bottom" align="center">
+                  Bookings
+                </TooltipContent>
+              </Tooltip>
 
-              {/* Profile */}
-              <Link
-                href="/profile"
-                className={cn(
-                  "p-0 h-8 w-8 flex items-center justify-center rounded-full",
-                  "text-gray-600 hover:text-primary transition-colors",
-                  "focus:outline-none focus:ring-2 focus:ring-primary/50"
-                )}
-              >
-                <User className="h-5 w-5" />
-              </Link>
+              <DropdownMenu modal={false}>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <DropdownMenuTrigger asChild>
+                      <Button
+                        variant="ghost"
+                        className="text-muted-foreground hover:text-primary hover:bg-transparent! p-0!"
+                      >
+                        <User className="size-5" />
+                      </Button>
+                    </DropdownMenuTrigger>
+                  </TooltipTrigger>
+                  <TooltipContent side="bottom" align="center">
+                    Profile
+                  </TooltipContent>
+                </Tooltip>
+                <DropdownMenuContent>
+                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem>Profile</DropdownMenuItem>
+                  <DropdownMenuItem>Billing</DropdownMenuItem>
+                  <DropdownMenuItem>Team</DropdownMenuItem>
+                  <DropdownMenuItem>Subscription</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           )}
         </div>
