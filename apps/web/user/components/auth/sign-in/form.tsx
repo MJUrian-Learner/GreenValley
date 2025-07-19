@@ -33,7 +33,6 @@ function SignInForm() {
   });
 
   const onSubmit = async (data: z.infer<typeof signInSchema>) => {
-    console.log(data);
     if (!isLoaded) return;
 
     try {

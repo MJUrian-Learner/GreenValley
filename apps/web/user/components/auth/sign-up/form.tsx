@@ -54,8 +54,6 @@ function SignUpForm() {
     } catch (e: unknown) {
       console.error(JSON.stringify(e, null, 2));
     }
-
-    console.log(signUp);
   };
 
   return (
