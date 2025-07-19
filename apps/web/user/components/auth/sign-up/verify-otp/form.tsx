@@ -18,13 +18,12 @@ import {
 } from "@/components/ui/input-otp";
 import { useSignUp } from "@clerk/nextjs";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { notFound, useRouter } from "next/navigation";
+import { notFound } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 export default function VerifyOtpForm({ signUpId }: { signUpId: string }) {
   const { isLoaded, signUp, setActive } = useSignUp();
-  const router = useRouter();
 
   const form = useForm<z.infer<typeof verifyOtpSchema>>({
     resolver: zodResolver(verifyOtpSchema),
@@ -54,7 +53,6 @@ export default function VerifyOtpForm({ signUpId }: { signUpId: string }) {
 
       if (signUpAttempt.status === "complete") {
         await setActive({ session: signUpAttempt.createdSessionId });
-        router.push("/");
       } else {
         console.error(JSON.stringify(signUpAttempt, null, 2));
       }
