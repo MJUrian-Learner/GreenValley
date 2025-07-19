@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Form,
   FormControl,
@@ -15,13 +16,19 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import Link from "next/link";
 import { PasswordInput } from "@/components/ui/passsword-input";
-import { Checkbox } from "@/components/ui/checkbox";
+import { useSignUp } from "@clerk/nextjs";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 function SignUpForm() {
+  const { isLoaded, signUp } = useSignUp();
+
+  const router = useRouter();
+
   const form = useForm<z.infer<typeof signUpSchema>>({
     resolver: zodResolver(signUpSchema),
+    mode: "onChange",
     defaultValues: {
       email: "",
       password: "",
@@ -30,8 +37,25 @@ function SignUpForm() {
     },
   });
 
-  const onSubmit = (data: z.infer<typeof signUpSchema>) => {
-    console.log(data);
+  const onSubmit = async (data: z.infer<typeof signUpSchema>) => {
+    if (!isLoaded) return;
+
+    try {
+      await signUp.create({
+        emailAddress: data.email,
+        password: data.password,
+      });
+
+      await signUp.prepareEmailAddressVerification({
+        strategy: "email_code",
+      });
+
+      router.push(`/auth/sign-up/verify-otp/${signUp.id}`);
+    } catch (e: unknown) {
+      console.error(JSON.stringify(e, null, 2));
+    }
+
+    console.log(signUp);
   };
 
   return (
