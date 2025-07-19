@@ -19,6 +19,11 @@ export default async function VerifyOtp({
 }) {
   const { slug: signUpId } = await params;
 
+  console.log("📄 OTP Page Debug:", {
+    signUpId,
+    timestamp: new Date().toISOString(),
+  });
+
   return (
     <Card className="w-full max-w-md mx-auto bg-white p-8 shadow-lg rounded-xl">
       <CardHeader className="text-center space-y-2 mb-6">
@@ -26,7 +31,7 @@ export default async function VerifyOtp({
           Verify Your Email
         </CardTitle>
         <CardDescription className="text-gray-600 text-sm">
-          We’ve sent a 6‑digit verification code to your email address
+          We've sent a 6‑digit verification code to your email address
         </CardDescription>
       </CardHeader>
 
@@ -35,7 +40,7 @@ export default async function VerifyOtp({
 
         <div className="mt-6 text-center space-y-4">
           <p className="text-sm text-gray-500">
-            Didn’t receive the code?{" "}
+            Didn't receive the code?{" "}
             <Button
               variant="link"
               className="p-0 h-auto text-sm font-medium hover:underline"
