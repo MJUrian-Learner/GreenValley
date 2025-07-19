@@ -3,11 +3,11 @@
 import { Button } from "@/components/ui/button";
 import { MENU_ITEMS } from "@/constants";
 import { cn } from "@/lib/utils";
-import { MapPin } from "lucide-react";
+import { MapPin, Calendar, User, Bell } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-function Header() {
+function Header({ authenticated }: { authenticated: boolean }) {
   const currentPath = usePathname();
 
   const isActive = (href: string) => currentPath === href;
@@ -22,7 +22,7 @@ function Header() {
         <div>
           <Link href="/" className="flex items-center gap-2">
             <MapPin className="size-8 text-background bg-primary rounded-lg p-1" />
-            <h1 className="text-lg font-semibold tracking-wider text-primary/90 text-shadow-sm font-serif">
+            <h1 className="text-lg font-semibold tracking-wider text-primary/90 font-serif">
               Green Valley
             </h1>
           </Link>
@@ -44,12 +44,54 @@ function Header() {
           </ul>
         </div>
         <div className="flex items-center gap-2">
-          <Link href="/auth/sign-in">
-            <Button variant="outline">Sign In</Button>
-          </Link>
-          <Link href="/auth/sign-up">
-            <Button>Sign Up</Button>
-          </Link>
+          {!authenticated ? (
+            <>
+              <Link href="/auth/sign-in">
+                <Button variant="outline">Sign In</Button>
+              </Link>
+              <Link href="/auth/sign-up">
+                <Button>Sign Up</Button>
+              </Link>
+            </>
+          ) : (
+            <div className="flex items-center gap-2">
+              {/* Notifications */}
+              <Link
+                href="/notifications"
+                className={cn(
+                  "p-0 h-8 w-8 flex items-center justify-center rounded-full",
+                  "text-gray-600 hover:text-primary transition-colors",
+                  "focus:outline-none focus:ring-2 focus:ring-primary/50"
+                )}
+              >
+                <Bell className="h-5 w-5" />
+              </Link>
+
+              {/* Calendar overview */}
+              <Link
+                href="/my-calendar"
+                className={cn(
+                  "p-0 h-8 w-8 flex items-center justify-center rounded-full",
+                  "text-gray-600 hover:text-primary transition-colors",
+                  "focus:outline-none focus:ring-2 focus:ring-primary/50"
+                )}
+              >
+                <Calendar className="h-5 w-5" />
+              </Link>
+
+              {/* Profile */}
+              <Link
+                href="/profile"
+                className={cn(
+                  "p-0 h-8 w-8 flex items-center justify-center rounded-full",
+                  "text-gray-600 hover:text-primary transition-colors",
+                  "focus:outline-none focus:ring-2 focus:ring-primary/50"
+                )}
+              >
+                <User className="h-5 w-5" />
+              </Link>
+            </div>
+          )}
         </div>
       </nav>
     </header>
