@@ -1,13 +1,36 @@
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+import { NextResponse } from "next/server";
 
 const isPublicRoute = createRouteMatcher(["/auth(.*)"]);
 
 export default clerkMiddleware(async (auth, req) => {
-  const { userId, redirectToSignIn } = await auth();
+  const url = req.nextUrl.clone();
+  const { pathname, search } = url;
+  const res = NextResponse.next();
 
-  if (!userId && !isPublicRoute(req)) {
-    return redirectToSignIn();
+  if (
+    !isPublicRoute(req) &&
+    !pathname.startsWith("/_next") &&
+    !pathname.match(/\.\w+$/) &&
+    !pathname.startsWith("/api") &&
+    !pathname.startsWith("/trpc")
+  ) {
+    res.cookies.set("lastPath", pathname + search, {
+      path: "/",
+      sameSite: "lax",
+      httpOnly: true,
+      maxAge: 60 * 60,
+    });
   }
+
+  const { userId } = await auth();
+
+  if (userId && isPublicRoute(req)) {
+    const returnTo = req.cookies.get("lastPath")?.value || "/";
+    return NextResponse.redirect(new URL(returnTo, req.url));
+  }
+
+  return res;
 });
 
 export const config = {
