@@ -1,6 +1,6 @@
 "use server";
 
-import VerifyOtpForm from "@/components/auth/verify-otp/form";
+import VerifyOtpForm from "@/components/auth/sign-up/verify-otp/form";
 import { Button } from "@/components/ui/button";
 import {
   Card,
