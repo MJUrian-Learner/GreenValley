@@ -17,8 +17,13 @@ import {
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { PasswordInput } from "@/components/ui/passsword-input";
+import { useRouter } from "next/navigation";
+import { useSignIn } from "@clerk/nextjs";
 
 function SignInForm() {
+  const { isLoaded, signIn, setActive } = useSignIn();
+  const router = useRouter();
+
   const form = useForm<z.infer<typeof signInSchema>>({
     resolver: zodResolver(signInSchema),
     defaultValues: {
@@ -27,8 +32,25 @@ function SignInForm() {
     },
   });
 
-  const onSubmit = (data: z.infer<typeof signInSchema>) => {
+  const onSubmit = async (data: z.infer<typeof signInSchema>) => {
     console.log(data);
+    if (!isLoaded) return;
+
+    try {
+      const signInAttempt = await signIn.create({
+        identifier: data.email,
+        password: data.password,
+      });
+
+      if (signInAttempt.status === "complete") {
+        await setActive({ session: signInAttempt.createdSessionId });
+        router.push("/");
+      } else {
+        console.error(JSON.stringify(signInAttempt, null, 2));
+      }
+    } catch (e: unknown) {
+      console.error(JSON.stringify(e, null, 2));
+    }
   };
 
   return (
