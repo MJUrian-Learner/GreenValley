@@ -63,7 +63,7 @@ function Hero() {
       </div>
 
       {/* Main Content Grid */}
-      <div className="relative z-10 container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-4">
+      <div className="relative z-10 container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <Copywrite />
         <HeroImage />
       </div>
