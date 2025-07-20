@@ -44,7 +44,7 @@ function Header({ authenticated }: { authenticated: boolean }) {
           <Link href="/" className="flex items-center gap-2">
             <MapPin className="size-8 text-background bg-primary rounded-lg p-1" />
             <h1 className="text-lg font-semibold tracking-wider text-primary/90 font-serif">
-              {data[0]?.website_name}
+              {data?.[0]?.website_name}
             </h1>
           </Link>
         </div>
