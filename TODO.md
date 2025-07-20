@@ -7,3 +7,12 @@
 - [x] Backend setup with NestJS + MongoDB Atlas
 - [x] Redesign and polish About Us page
 ```
+
+**July 21–27, 2025**
+
+```markdown
+- [ ] Contact Us Page
+- [ ] Facilities Page
+- [ ] User Profile Management
+- [ ] Facilities API Module
+```
