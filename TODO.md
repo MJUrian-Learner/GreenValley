@@ -4,6 +4,6 @@
 
 ```markdown
 - [x] Custom Sign-In & Sign-Up flows with Clerk
-- [ ] Backend setup with NestJS + MongoDB Atlas
-- [ ] Redesign and polish About Us page
+- [x] Backend setup with NestJS + MongoDB Atlas
+- [x] Redesign and polish About Us page
 ```
