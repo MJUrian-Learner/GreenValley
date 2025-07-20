@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Merriweather, Poppins } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import { ReactQueryProvider } from "@/providers/react-query-provider";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -25,6 +26,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  console.log(process.env.BACKEND_URL);
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
@@ -32,7 +34,7 @@ export default function RootLayout({
           suppressHydrationWarning
           className={`${poppins.variable} ${merriweather.variable} font-sans antialiased`}
         >
-          {children}
+          <ReactQueryProvider>{children}</ReactQueryProvider>
         </body>
       </html>
     </ClerkProvider>
