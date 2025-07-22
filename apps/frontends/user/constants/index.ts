@@ -16,6 +16,12 @@ import {
   BadgeCheck,
   Shield,
   Heart,
+  Headphones,
+  Eye,
+  Globe,
+  TrendingUp,
+  Award,
+  Target,
 } from "lucide-react";
 
 export const SECTION_TITLES = {
@@ -45,6 +51,11 @@ export const SECTION_TITLES = {
     title: "Start Your Reservation Now",
     description:
       "Book your next stay with us and enjoy a comfortable and memorable experience.",
+  },
+  missionVision: {
+    title: "Our Mission & Vision",
+    description:
+      "We&apos;re on a mission to transform how people find andexperience rental properties, making the process transparent,secure, and delightful.",
   },
 };
 
@@ -376,3 +387,48 @@ export const TEAM_MEMBERS = [
     skills: ["UI/UX Design", "Figma", "Prototyping"],
   },
 ];
+
+export const MISSION_VISION_CARDS = {
+  mission: {
+    title: "Our Mission",
+    subtitle: "Revolutionize Rental Living",
+    titleIcon: Target as LucideIcon,
+    description:
+      "To revolutionize the rental market by prioritizing transparency, security, and exceptional user experience. We aim to be the trusted platform that connects people with their perfect homes.",
+    features: [
+      {
+        icon: ShieldCheck as LucideIcon,
+        text: "Transparent pricing & no hidden fees",
+      },
+      {
+        icon: Eye as LucideIcon,
+        text: "Verified properties with quality assurance",
+      },
+      {
+        icon: Headphones as LucideIcon,
+        text: "24/7 customer support & assistance",
+      },
+    ],
+  },
+  vision: {
+    title: "Our Vision",
+    subtitle: "Lead the Digital Revolution",
+    titleIcon: Award as LucideIcon,
+    description:
+      "To become the leading platform that transforms how people find and manage rental properties. We envision a world where finding the perfect home is effortless and enjoyable.",
+    features: [
+      {
+        icon: Globe as LucideIcon,
+        text: "Digital platform for seamless property discovery",
+      },
+      {
+        icon: Users as LucideIcon,
+        text: "Community-driven platform for property management",
+      },
+      {
+        icon: TrendingUp as LucideIcon,
+        text: "AI-powered recommendations for personalized experiences",
+      },
+    ],
+  },
+};
