@@ -22,6 +22,7 @@ import {
   TrendingUp,
   Award,
   Target,
+  Zap,
 } from "lucide-react";
 
 export const SECTION_TITLES = {
@@ -56,6 +57,11 @@ export const SECTION_TITLES = {
     title: "Our Mission & Vision",
     description:
       "We&apos;re on a mission to transform how people find andexperience rental properties, making the process transparent,secure, and delightful.",
+  },
+  story: {
+    title: "Our Journey",
+    description:
+      "Every milestone tells a story of growth, innovation, and our commitment to making rental living better for everyone.",
   },
 };
 
@@ -432,3 +438,51 @@ export const MISSION_VISION_CARDS = {
     ],
   },
 };
+
+export const STORY_CARDS = [
+  {
+    year: "2023",
+    title: "The Beginning",
+    subtitle: "Humble Beginnings",
+    text: "Founded with a simple vision: to fix the broken rental market. We started with a small team and big dreams.",
+    achievements: [
+      "Launched MVP",
+      "First 100 users",
+      "Seed funding secured",
+    ],
+    icon: Zap as LucideIcon,
+    color: "primary",
+    gradient: "from-primary/10 to-primary/5",
+    image: "/placeholder.svg",
+  },
+  {
+    year: "2024",
+    title: "Rapid Growth",
+    subtitle: "Scaling Success",
+    text: "Our community exploded as families, students, and professionals discovered the difference we make.",
+    achievements: [
+      "10,000+ users",
+      "500+ properties",
+      "24/7 support launched",
+    ],
+    icon: TrendingUp as LucideIcon,
+    color: "accent",
+    gradient: "from-accent/10 to-accent/5",
+    image: "/placeholder.svg",
+  },
+  {
+    year: "2025",
+    title: "Global Expansion",
+    subtitle: "Beyond Borders",
+    text: "We're expanding our reach and features, bringing our innovative approach to new markets worldwide.",
+    achievements: [
+      "International launch",
+      "Advanced features",
+      "AI-powered matching",
+    ],
+    icon: Globe as LucideIcon,
+    color: "primary",
+    gradient: "from-primary/10 to-primary/5",
+    image: "/placeholder.svg",
+  },
+]
