@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useElementHeight } from "@/hooks/useElementHeight";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -10,6 +10,14 @@ import { motion } from "framer-motion";
 function AboutHero() {
   const headerHeight = useElementHeight("header");
   const [isHovered, setIsHovered] = useState(false);
+  const [particles, setParticles] = useState<
+    {
+      left: number;
+      top: number;
+      duration: number;
+      delay: number;
+    }[]
+  >([]);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -18,6 +26,18 @@ function AboutHero() {
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
+
+  useEffect(() => {
+    setParticles(
+      Array.from({ length: 6 }).map(() => ({
+        left: Math.random() * 100,
+        top: Math.random() * 100,
+        duration: 3 + Math.random() * 2,
+        delay: Math.random() * 2,
+      }))
+    );
+  }, []);
+
   return (
     <section
       className="relative flex items-center justify-center bg-cover bg-center transition-all duration-700 ease-in-out"
@@ -38,25 +58,27 @@ function AboutHero() {
 
       {/* Floating Particles */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-white/30 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -20, 0],
-              opacity: [0.3, 0.8, 0.3],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
+        {particles.map((particle, i) => {
+          return (
+            <motion.div
+              key={i}
+              className="absolute w-4 h-4 bg-accent/15 rounded-full"
+              style={{
+                left: `${particle.left}%`,
+                top: `${particle.top}%`,
+              }}
+              animate={{
+                y: [0, -20, 0],
+                opacity: [0.3, 0.8, 0.3],
+              }}
+              transition={{
+                duration: particle.duration,
+                repeat: Infinity,
+                delay: particle.delay,
+              }}
+            />
+          );
+        })}
       </div>
       <div className="absolute top-1/4 right-10 hidden lg:block">
         <motion.div
